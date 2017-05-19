@@ -1,17 +1,16 @@
 # [FaceApp](https://t.me/MajicNews)
-** Source Robot FaceApp
-
+** FaceApp Robot Source
 ## Commands
 
-| Help Commands |
-| /stats Members Bot |
-| /ban and /unban |
-| /bc Message Forward to all members |
+| Admins Commands |
+| /stats Members List |
+| /ban id && /unban id |
+| /bc ReplyMessage : Forward to all members |
 
 * * *
 
 # Installation
-
+### Note : Dont forget to set your bot as admin in channel!
 ```sh
 # Let's install the bot.
 pip install pyTelegramBotAPI
@@ -21,8 +20,8 @@ python setup.py install
 cd ..
 git clone https://github.com/MagicNews/FaceApp
 cd FaceApp
-Set TOKEN And Id Admin TO faceapp.py
-python faceapp.py —code launch bot
+Set TOKEN && Admin ID && Channel_id in faceapp.py
+python faceapp.py
 ```
 ### One command
 To install everything in one command, use:
