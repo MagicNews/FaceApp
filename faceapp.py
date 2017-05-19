@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from tempfile import TemporaryFile,requests,redis,re,sys
+import requests,redis,sys
+from tempfile import TemporaryFile
 from telebot import TeleBot
 from telebot import types
 from multiprocessing import Process, freeze_support
