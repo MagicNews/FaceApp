@@ -19,7 +19,7 @@ python faceapp.py —code launch bot
 ### One command
 To install everything in one command, use:
 ```sh
-pip install pyTelegramBotAPI && git clone https://github.com/eternnoir/pyTelegramBotAPI.git && cd pyTelegramBotAPI && python setup.py install && cd .. && git clone https://github.com/MagicNews/FaceApp && cd FaceApp && python faceapp.py —code launch bot
+pip install pyTelegramBotAPI && git clone https://github.com/eternnoir/pyTelegramBotAPI.git && cd pyTelegramBotAPI && python setup.py install && cd .. && git clone https://github.com/MagicNews/FaceApp && cd FaceApp && python faceapp.py
 ```
 
 * * *
