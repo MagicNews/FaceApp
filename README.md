@@ -33,7 +33,7 @@ pip install pyTelegramBotAPI && git clone https://github.com/eternnoir/pyTelegra
 
 ### Creator
 
-Programmer : [@king_program](https://t.me/king_program)
+Programmer : [@jan123](https://t.me/jan123)
 
 Developer : [@Hosein_M1](https://t.me/Hosein_M1)
 
