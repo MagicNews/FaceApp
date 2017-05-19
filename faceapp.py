@@ -15,7 +15,7 @@ redis = redis.StrictRedis(host='localhost', port=6379, db=0)
 token = "XXX" #Token Bot
 admin =  #ID Admin
 channel =  #Channel ID
-bot = telebot.TeleBot(token)
+bot = TeleBot(token)
 
 print "Bot Is Now Online"
 
