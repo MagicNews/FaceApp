@@ -11,6 +11,7 @@ git clone https://github.com/eternnoir/pyTelegramBotAPI.git
 cd pyTelegramBotAPI
 python setup.py install
 cd ..
+git clone https://github.com/MagicNews/FaceApp
 cd FaceApp
 Set TOKEN And Id Admin TO faceapp.py
 python faceapp.py —code launch bot
@@ -18,7 +19,7 @@ python faceapp.py —code launch bot
 ### One command
 To install everything in one command, use:
 ```sh
-cd $HOME && cd BDReborn && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+pip install pyTelegramBotAPI && git clone https://github.com/eternnoir/pyTelegramBotAPI.git && cd pyTelegramBotAPI && python setup.py install && cd .. && git clone https://github.com/MagicNews/FaceApp && cd FaceApp && python faceapp.py —code launch bot
 ```
 
 * * *
