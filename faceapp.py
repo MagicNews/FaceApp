@@ -9,7 +9,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 # Magic Team 
-# Channel : @MajicNews
+# Channel : @MagicNews
 
 redis = redis.StrictRedis(host='localhost', port=6379, db=0)
 token = "XXX" #Token Bot
