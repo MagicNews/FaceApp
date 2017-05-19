@@ -1,15 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from tempfile import TemporaryFile
-import requests
-import json
-import redis
-import re
-import telebot
+from tempfile import TemporaryFile,requests,redis,re,sys
 from telebot import TeleBot
 from telebot import types
 from multiprocessing import Process, freeze_support
-import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -22,7 +16,7 @@ admin =  #ID Admin
 channel =  #Channel ID
 bot = telebot.TeleBot(token)
 
-print "Bot Online"
+print "Bot Is Now Online"
 
 @bot.message_handler(commands=['start'])
 def start(m):
@@ -101,34 +95,31 @@ def photos(m):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call) :
-   s = bot.get_chat_member(channel, call.message.chat.id)
-   mn = redis.sismember("bans", call.from_user.id)
-   if mn == False:
-     if s.status == "member" or s.status == "creator" or s.status == "administrator":
-        try :
-            code = call.data
-            ff = TemporaryFile()
-            ff.write(requests.get("http://dev.magic-team.ir/faceapp/download/?hash="+code).content)
-            ff.seek(0)
-            bot.send_photo(call.message.chat.id,ff,reply_to_message_id=call.message.message_id)
-            ff.close()
-        except Exception as e:
-            print(e)
-
-        if call.message:
-          if call.data == "pars":
+    mn = redis.sismember("bans", call.from_user.id)
+    if mn == False:
+        if call.data == "pars":
             markup = types.InlineKeyboardMarkup()
             a = types.InlineKeyboardButton("⚜ سازنده ⚜", callback_data='help')
             markup.add(a)
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="سلام👋🏻\n🔅به ربات FaceApp خوش امدید.\n➖➖➖➖➖➖➖➖\n⛑برای استفاده از این ربات تنها کافی است عکس مورد نظر خود را برای تغییر چهره ی ان ارسال نمایید.\n⚠️توجه : عکس باید تک نفره و از یک چهره ی کاملا واضح باشد.", reply_markup=markup)
-
-          if call.data == "eng":
+        elif call.data == "eng":
             markup = types.InlineKeyboardMarkup()
             a = types.InlineKeyboardButton("⚜ Creator ⚜", callback_data='help')
             markup.add(a)
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Hi👋🏻\n🔅Welcome to FaceApp bot.\n➖➖➖➖➖➖➖➖\n⛑For use this robot you just need to send your picture for face changing.\n⚠️Note : Picture must be a single picture and have a bright face.", reply_markup=markup)
-
-          if call.data == "help":
+        elif call.data == "help":
             bot.send_message(call.message.chat.id, "⚜ Magic Team ⚜\n➖➖➖➖➖➖➖➖\n🔹 Programmer : @king_program\n🔹 Developer : @Hosein_M1\n🔸 Channel : @magicnews")
+        else :
+            s = bot.get_chat_member(channel, call.message.chat.id)
+            if s.status == "member" or s.status == "creator" or s.status == "administrator":
+                try :
+                    code = call.data
+                    ff = TemporaryFile()
+                    ff.write(requests.get("http://dev.magic-team.ir/faceapp/download/?hash="+code).content)
+                    ff.seek(0)
+                    bot.send_photo(call.message.chat.id,ff,reply_to_message_id=call.message.message_id)
+                    ff.close()
+                except Exception as e:
+                    print(e)
 
 bot.polling(True)
