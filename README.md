@@ -6,12 +6,14 @@
 
 ```sh
 # Let's install the bot.
-cd $HOME
-cd tghelper
-chmod +x beyond.sh
-./launch.sh install
-./launch.sh 
-# Enter a phone number & confirmation code.
+pip install pyTelegramBotAPI
+git clone https://github.com/eternnoir/pyTelegramBotAPI.git
+cd pyTelegramBotAPI
+python setup.py install
+cd ..
+cd FaceApp
+Set TOKEN And Id Admin TO faceapp.py
+python faceapp.py —code launch bot
 ```
 ### One command
 To install everything in one command, use:
