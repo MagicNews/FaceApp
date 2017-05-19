@@ -1,17 +1,12 @@
 # [FaceApp](https://t.me/MajicNews)
 ** Source Robot FaceApp
 
-* * *
-
 ## Commands
 
-| Use help |
-|:--------|:------------|
-| [#!/]help | just send help in your group and get the commands |
-
-**You can use "#", "!", or "/" to begin all commands
-
-* * *
+| Help Commands |
+| /stats Members Bot |
+| /ban and /unban |
+| /bc Message Forward to all members |
 
 * * *
 
