@@ -41,4 +41,4 @@ Developer : [@Hosein_M1](https://t.me/Hosein_M1)
 
 ### Our Telegram channel:
 
-[@MajicNews](https://telegram.me/MajicNews)
+[@MagicNews](https://telegram.me/MagicNews)
