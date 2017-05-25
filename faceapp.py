@@ -81,7 +81,7 @@ def photos(m):
                     ff.seek(0)
                     links = requests.post("http://dev.magic-team.ir/faceapp/apply_filter/?format=json",files={"photo" : ff}).json()
                     if links["status"] != True :
-                        bot.reply_to(m.from_user.id,"⚠️Face Not found!\n➖➖➖➖➖➖➖➖\n⚠️چهره شناسایی نشد!")
+                        bot.reply_to(m,"⚠️Face Not found!\n➖➖➖➖➖➖➖➖\n⚠️چهره شناسایی نشد!")
                         ff.close()
                         return
                     markup = types.InlineKeyboardMarkup()
