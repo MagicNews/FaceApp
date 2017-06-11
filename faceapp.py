@@ -79,15 +79,15 @@ def photos(m):
                     ff = TemporaryFile()
                     ff.write(bot.download_file(bot.get_file(m.photo[-1].file_id).file_path))
                     ff.seek(0)
-                    links = requests.post("http://dev.magic-team.ir/faceapp/apply_filter/?format=json",files={"photo" : ff}).json()
+                    links = requests.post("http://dev.magictm.net/faceapp/apply_filter/?format=json",files={"photo" : ff}).json()
                     if links["status"] != True :
                         bot.reply_to(m,"⚠️Face Not found!\n➖➖➖➖➖➖➖➖\n⚠️چهره شناسایی نشد!")
                         ff.close()
                         return
                     markup = types.InlineKeyboardMarkup()
-                    markup.row(types.InlineKeyboardButton(text='👴🏻',callback_data=links['result']['old'].replace("http://dev.magic-team.ir/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='😻',callback_data=links['result']['hot'].replace("http://dev.magic-team.ir/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='👶🏻',callback_data=links['result']['young'].replace("http://dev.magic-team.ir/faceapp/download/?hash=","")))
-                    markup.row(types.InlineKeyboardButton(text='👱🏻',callback_data=links['result']['male'].replace("http://dev.magic-team.ir/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='👱🏻‍♀️',callback_data=links['result']['female'].replace("http://dev.magic-team.ir/faceapp/download/?hash=","")))
-                    markup.row(types.InlineKeyboardButton(text='😁',callback_data=links['result']['smile'].replace("http://dev.magic-team.ir/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='☺️',callback_data=links['result']['smile_2'].replace("http://dev.magic-team.ir/faceapp/download/?hash=","")))
+                    markup.row(types.InlineKeyboardButton(text='👴🏻',callback_data=links['result']['old'].replace("http://dev.magictm.net/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='😻',callback_data=links['result']['hot'].replace("http://dev.magictm.net/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='👶🏻',callback_data=links['result']['young'].replace("http://dev.magictm.net/faceapp/download/?hash=","")))
+                    markup.row(types.InlineKeyboardButton(text='👱🏻',callback_data=links['result']['male'].replace("http://dev.magictm.net/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='👱🏻‍♀️',callback_data=links['result']['female'].replace("http://dev.magictm.net/faceapp/download/?hash=","")))
+                    markup.row(types.InlineKeyboardButton(text='😁',callback_data=links['result']['smile'].replace("http://dev.magictm.net/faceapp/download/?hash=","")),types.InlineKeyboardButton(text='☺️',callback_data=links['result']['smile_2'].replace("http://dev.magictm.net/faceapp/download/?hash=","")))
                     ff.seek(0)
                     bot.send_photo(m.chat.id,ff,reply_markup=markup,reply_to_message_id=m.message_id)
                     ff.close()
@@ -116,7 +116,7 @@ def callback_inline(call) :
                 try :
                     code = call.data
                     ff = TemporaryFile()
-                    ff.write(requests.get("http://dev.magic-team.ir/faceapp/download/?hash="+code).content)
+                    ff.write(requests.get("http://dev.magictm.net/faceapp/download/?hash="+code).content)
                     ff.seek(0)
                     bot.send_photo(call.message.chat.id,ff,reply_to_message_id=call.message.message_id)
                     ff.close()
