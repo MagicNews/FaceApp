@@ -12,10 +12,10 @@ sys.setdefaultencoding("utf-8")
 # Channel : @MagicNews
 
 redis = redis.StrictRedis(host='localhost', port=6379, db=0)
-token = "XXX" #Token Bot
-admin =  #ID Admin
-channel =  #Channel ID
-bot = TeleBot(token)
+token = "442560503:AAEK3GFeKd8K2A1mmKg7CLG_5ZUb2Ey0DXo" #Token Bot
+admin =  277313212 #ID Admin
+channel =  -1001106052983 #Channel ID
+bot = TeleBot(442560503:AAEK3GFeKd8K2A1mmKg7CLG_5ZUb2Ey0DXo)
 
 print "Bot Is Now Online"
 
